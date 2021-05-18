@@ -6,9 +6,9 @@ const formidableMiddleware = require("express-formidable");
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
-  cloud_name: "webimup",
-  api_key: "476399429992834",
-  api_secret: "UBT9U3vjJOtSwNfUVqYzVsmPs3g",
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
 });
 
 const app = express();
