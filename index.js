@@ -31,7 +31,7 @@ const offersRoutes = require("./routes/offers");
 app.use(offersRoutes);
 
 app.all("*", (req, res) => {
-  res.status(404).json({ message: "Page not found" });
+  res.status(404).json({ message: "Page not found2" });
 });
 
 app.listen(process.env.PORT, () => {
