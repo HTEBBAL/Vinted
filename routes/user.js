@@ -30,13 +30,11 @@ router.post("/user/signup", async (req, res) => {
             phone: req.fields.phone,
           },
         });
-        /*
         let pictureToUpload = req.files.username_photo.path;
         let result = await cloudinary.uploader.upload(pictureToUpload, {
           folder: `/vinted/profil/ ${newUser._id}`,
         });
         newUser.user_image = result;
-*/
         await newUser.save();
 
         res.status(200).json({

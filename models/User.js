@@ -4,9 +4,7 @@ const User = mongoose.model("User", {
   hash: String,
   salt: String,
   token: String,
-  /*
   user_image: { type: mongoose.Schema.Types.Mixed, default: {} },
-  */
   email: {
     unique: true,
     type: String,
