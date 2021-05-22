@@ -8,12 +8,14 @@ const cloudinary = require("cloudinary").v2;
 const User = require("../models/User");
 
 router.post("/user/signup", async (req, res) => {
+  console.log("test");
   try {
     const password = req.fields.password;
 
     const users = await User.findOne({ email: req.fields.email });
 
     const salt = uid2(16);
+
     const hash = SHA256(password + salt).toString(encBase64);
 
     if (!users) {
@@ -37,7 +39,6 @@ router.post("/user/signup", async (req, res) => {
         newUser.user_image = result;
 
         await newUser.save();
-        console.log(newUser);
 
         res.status(200).json({
           _id: newUser._id,
