@@ -8,7 +8,6 @@ const cloudinary = require("cloudinary").v2;
 const User = require("../models/User");
 
 router.post("/user/signup", async (req, res) => {
-  console.log("test");
   try {
     const password = req.fields.password;
 
