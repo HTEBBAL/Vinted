@@ -34,6 +34,6 @@ app.all("*", (req, res) => {
   res.status(404).json({ message: "Page not found" });
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || "https://vinted-hassan.herokuapp.com/", () => {
   console.log("server has started");
 });
